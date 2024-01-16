@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GitHub Hardware Viewer",
-  "description": "Base Level Extension",
+  "description": "Tool for viewing hardware design files on Github",
   "version": "1.0",
   "action": {
     "default_popup": "hello.html",
