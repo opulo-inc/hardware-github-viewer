@@ -1,24 +1,28 @@
 {
-    "manifest_version": 3,
-    "name": "GitHub Hardware Viewer",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "action": {
-      "default_popup": "hello.html",
-      "default_icon": "opulo.png"
-    },
-    "content_scripts": [
-      {
-        "js": ["scripts/content.js"],
-        "matches": [
-          "https://github.com/*"
-        ]
-      }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": [ "opulo.png" ],
-            "matches": [ "https://github.com/*" ]
-        }
-    ]
-  }
+  "manifest_version": 3,
+  "name": "GitHub Hardware Viewer",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "opulo.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+        "scripts/content.js",
+        "scripts/kicanvas.js",
+        "scripts/viewer.js"
+      ],
+      "run_at": "document_idle",
+      "matches": ["https://github.com/*"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["opulo.png", "scripts/kicanvas.js"],
+      "matches": ["https://github.com/*"]
+    }
+  ]
+}

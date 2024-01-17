@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.8.0"
+  }
+}
