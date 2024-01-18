@@ -10,7 +10,7 @@
   "content_scripts": [
     {
       "js": [
-        "./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js",
+        "scripts/webcomponents-bundle.js",
         "scripts/content.js",
         "scripts/kicanvas.js",
         "scripts/viewer.js"
