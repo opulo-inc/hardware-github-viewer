@@ -1,24 +1,28 @@
 {
-    "manifest_version": 3,
-    "name": "GitHub Hardware Viewer",
-    "description": "Tool for viewing hardware design files on Github",
-    "version": "1.1",
-    "action": {
-      "default_popup": "hello.html",
-      "default_icon": "opulo.png"
-    },
-    "content_scripts": [
-      {
-        "js": ["scripts/content.js"],
-        "matches": [
-          "https://github.com/*"
-        ]
-      }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": [ "opulo.png" ],
-            "matches": [ "https://github.com/*" ]
-        }
-    ]
-  }
+  "manifest_version": 3,
+  "name": "GitHub Hardware Viewer",
+  "description": "Tool for viewing hardware design files on Github",
+  "version": "1.1",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "opulo.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/webcomponents-bundle.js",
+        "scripts/content.js",
+        "scripts/kicanvas.js",
+        "scripts/viewer.js"
+      ],
+      "run_at": "document_idle",
+      "matches": ["https://github.com/*"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["opulo.png", "scripts/kicanvas.js"],
+      "matches": ["https://github.com/*"]
+    }
+  ]
+}
