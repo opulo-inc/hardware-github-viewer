@@ -10,19 +10,38 @@
   "content_scripts": [
     {
       "js": [
-        "scripts/webcomponents-bundle.js",
         "scripts/content.js",
-        "scripts/kicanvas.js",
         "scripts/viewer.js"
       ],
       "run_at": "document_idle",
-      "matches": ["https://github.com/*"]
+      "matches": [
+        "https://github.com/*"
+      ]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["opulo.png", "scripts/kicanvas.js"],
-      "matches": ["https://github.com/*"]
+      "resources": [
+        "viewer.html"
+      ],
+      "matches": [
+        "https://github.com/*"
+      ]
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{f195e3c3-d8e4-486a-882f-efb5c11e9d87}",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "browsingActivity",
+          "websiteContent"
+        ]
+      }
+    },
+    "gecko_android": {
+      "strict_min_version": "142.0"
+    }
+  }
 }
