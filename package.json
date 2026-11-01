@@ -1,5 +1,6 @@
 {
-  "devDependencies": {
-    "@webcomponents/webcomponentsjs": "^2.8.0"
+  "private": true,
+  "scripts": {
+    "test:firefox": "node tests/firefox.mjs"
   }
 }
